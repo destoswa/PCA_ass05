@@ -7,8 +7,8 @@
 
  for k = 1:kmax
 
-     j = (k+1):kmax
-     kappa(k) = {... you will need to call coag_kernel() ...}
+     j = (k+1):kmax;
+     kappa(k) = coag_kernel(Dp(k),Dp(j))*n(j);
 
  end
 

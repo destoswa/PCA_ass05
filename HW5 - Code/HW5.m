@@ -14,8 +14,8 @@ gradP2 = 1e-10; % [atm] equivalent to 100 ppt
 
 if(exist('OCTAVE_VERSION', 'builtin') ~= 0)
   %% integrate (Octave)
-  %y1 = lsode(@(Dp, t) growth_rate(Dp, gradP1), Dp0, t);
-  %y2 = lsode(@(Dp, t) growth_rate(Dp, gradP2), Dp0, t);
+  y1 = lsode(@(Dp, t) growth_rate(Dp, gradP1), Dp0, t);
+  y2 = lsode(@(Dp, t) growth_rate(Dp, gradP2), Dp0, t);
 else
   %% integrate (MATLAB)
   [~,y1] = ode45(@(t, Dp) growth_rate(Dp, gradP1), t, Dp0);

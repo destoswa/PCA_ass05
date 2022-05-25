@@ -17,7 +17,7 @@ Kn = 2*lambda/D_p;
  f = (0.75*alpha*(1+Kn))/(Kn^2+Kn+0.283*Kn*alpha+0.75*alpha);
 
  %% calculate I(Dp)
- rate = (4*D_AB*M*f*gradP)/(R*T*rho*D_p) %[m/s]
+ rate = (4*D_AB*M*f*gradP)/(R*T*rho*D_p); %[m/s]
 
  end
 
