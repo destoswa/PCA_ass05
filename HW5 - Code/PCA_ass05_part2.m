@@ -29,3 +29,19 @@ xlabel('D_p')
 xlim([10^-3 10^-1])
 ylim([10^0 10^3])
 %% Computation of Pr_{k->k+1}
+
+
+%% Computation of Pr_{3->100nm}
+Pr=zeros(199,1);
+Pr(1)=exp(-tao_cond(1)/tao_coag(1));
+for k=1:198 
+   Pr(k+1)=Pr(k)*exp(-tao_cond(k+1)/tao_coag(k+1));
+end
+
+figure(3)
+% loglog(Dp(1:end-1),tao_cond,'.')
+loglog(Dp(1:end-1),Pr,'.')
+ylabel('P_{r}')
+xlabel('D_p')
+xlim([10^-3 10^-1])
+ylim([1 0])
